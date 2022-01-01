@@ -93,6 +93,7 @@ public class DefaultHighlighter {
   static final String XML_ATTRIBUTE_VALUE_ID = "Scala XML attribute value";
   static final String XML_COMMENT_ID = "Scala XML comment";
   static final String SCALATEST_KEYWORD_ID = "Scalatest keyword";
+  static final String NAMED_ARGUMENT_ID = "Named argument";
 
   public static TextAttributesKey LINE_COMMENT = createKey(LINE_COMMENT_ID, DefaultLanguageHighlighterColors.LINE_COMMENT);
   public static TextAttributesKey BLOCK_COMMENT = createKey(BLOCK_COMMENT_ID, DefaultLanguageHighlighterColors.BLOCK_COMMENT);
@@ -155,6 +156,7 @@ public class DefaultHighlighter {
   // TODO Inherit Java's arrow attributes when Java will support them
   public static TextAttributesKey ARROW = createKey(ARROW_ID, DefaultLanguageHighlighterColors.OPERATION_SIGN);
   public static TextAttributesKey BAD_CHARACTER = createKey(BAD_CHARACTER_ID, HighlighterColors.BAD_CHARACTER);
+  public static TextAttributesKey NAMED_ARGUMENT = createKey(NAMED_ARGUMENT_ID, JavaHighlightInfoTypes.PARAMETER.getAttributesKey());
 
   public static TextAttributesKey XML_TAG = createKey(XML_TAG_ID, XmlHighlighterColors.XML_TAG);
   public static TextAttributesKey XML_TAG_NAME = createKey(XML_TAG_NAME_ID, XmlHighlighterColors.XML_TAG_NAME);

@@ -94,6 +94,7 @@ object ScalaColorSchemeAnnotator {
         DefaultHighlighter.CLASS
       case _: PsiClass if refElement.is[ScReferenceExpression] =>
         DefaultHighlighter.OBJECT
+
       case x: ScBindingPattern =>
         val parent = x.nameContext
         parent match {
@@ -240,6 +241,8 @@ object ScalaColorSchemeAnnotator {
         }
       case x: ScBindingPattern =>
         x.nameContext match {
+          case namedArg@ScAssignment(_, Some(value: ScLiteral)) if namedArg.isNamedParameter =>
+            DefaultHighlighter.NAMED_ARGUMENT
           case _: ScValue | _: ScVariable =>
             Option(x.containingClass).foreach(a => if (SCALA_PREDEFINED_OBJECTS.contains(a.qualifiedName)) {
               x.`type`().foreach(annotateCollectionByType)

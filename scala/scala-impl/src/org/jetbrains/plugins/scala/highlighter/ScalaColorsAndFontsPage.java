@@ -101,7 +101,8 @@ public class ScalaColorsAndFontsPage implements RainbowColorSettingsPage {
           new AttributesDescriptor(DisplayNames.XML_ATTRIBUTE_NAME, XML_ATTRIBUTE_NAME),
           new AttributesDescriptor(DisplayNames.XML_ATTRIBUTE_VALUE, XML_ATTRIBUTE_VALUE),
           new AttributesDescriptor(DisplayNames.XML_COMMENT, XML_COMMENT),
-          new AttributesDescriptor(DisplayNames.SCALATEST_KEYWORD, SCALATEST_KEYWORD)
+          new AttributesDescriptor(DisplayNames.SCALATEST_KEYWORD, SCALATEST_KEYWORD),
+          new AttributesDescriptor(DisplayNames.NAMED_ARGUMENT, NAMED_ARGUMENT)
   };
 
   @NotNull
@@ -144,7 +145,7 @@ public class ScalaColorsAndFontsPage implements RainbowColorSettingsPage {
             "  <brace>}</brace>\n" +
             "  <keyword>def</keyword> <methoddecl>t</methoddecl><bracket>[</bracket><typeparam>T</typeparam><bracket>]</bracket><colon>:</colon> " +
             "<typeparam>T</typeparam> <assign>=</assign> <keyword>null</keyword>\n" +
-            "  <method>foo</method><par>(</par><number>0</number><comma>,</comma> <number>-1</number><par>)</par> " +
+            "  <method>foo</method><par>(</par><namedarg>x</namedarg><assign>=</assign><number>0</number><comma>,</comma> <number>-1</number><par>)</par> " +
             "<keyword>match</keyword> <brace>{</brace>\n" +
             "    <keyword>case</keyword> <pattern>x</pattern> <arrow>=></arrow> <pattern>x</pattern>\n" +
             "  <brace>}<brace>\n" +
@@ -161,7 +162,7 @@ public class ScalaColorsAndFontsPage implements RainbowColorSettingsPage {
             "  <keyword>val</keyword> <val>immutableCollection</val> <assign>=</assign> <immutablec>List</immutablec>(<number>1</number><comma>,</comma> <number>2</number>)\n" +
             "  <keyword>val</keyword> <val>javaCollection</val> <assign>=</assign> <keyword>new</keyword> <javac>TreeMap</javac>[<predef>Int</predef>,  <predef>Int</predef>]()\n\n" +
             "  <keyword>def</keyword> <methoddecl>foo</methoddecl><colon>:</colon> <class>ScalaClass</class> <assign>=</assign> " +
-            "<keyword>new</keyword> <class>ScalaClass</class><par>(</par><number>23</number>, " +
+            "<keyword>new</keyword> <class>ScalaClass</class><par>(</par><namedarg>x</namedarg><assign>=</assign><number>23</number>, " +
             "<number>9</number><par>)</par>\n" +
             "<brace>}</brace>\n\n" +
             "<annotation>@Annotation</annotation><par>(</par><number>2</number><par>)</par> " +
@@ -238,6 +239,7 @@ public class ScalaColorsAndFontsPage implements RainbowColorSettingsPage {
     map.put("xmlattributevalue", XML_ATTRIBUTE_VALUE);
     map.put("xmlcomment", XML_COMMENT);
     map.put("implicit", IMPLICIT_CONVERSIONS);
+    map.put("namedarg", NAMED_ARGUMENT);
 
     map.put("scaladoc", DOC_COMMENT);
     map.put("markup", SCALA_DOC_MARKUP);
@@ -313,5 +315,6 @@ public class ScalaColorsAndFontsPage implements RainbowColorSettingsPage {
     static final String XML_ATTRIBUTE_VALUE = ScalaOptionsBundle.message("options.scala.attribute.descriptor.scala.xml.attribute.value");
     static final String XML_COMMENT = ScalaOptionsBundle.message("options.scala.attribute.descriptor.scala.xml.comment");
     static final String SCALATEST_KEYWORD = ScalaOptionsBundle.message("options.scala.attribute.descriptor.scalatest.keyword");
+    static final String NAMED_ARGUMENT = ScalaOptionsBundle.message("options.scala.attribute.descriptor.named.argument");
   }
 }
